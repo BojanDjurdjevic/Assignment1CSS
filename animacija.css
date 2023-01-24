@@ -1,0 +1,82 @@
+ body {
+    background-color: #050210;
+} 
+@keyframes smallcircle-animation {
+    from {
+        transform: scale(1, 1);
+    }
+ 
+    to {
+        transform: scale(44, 44);
+    }
+}
+@keyframes bigcircle-animation {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.krug {
+    border-radius: 100%;
+}
+#circle1 {
+    position: absolute;
+    left: 30%;
+    top: 60px;
+    width: 540px;
+    height: 540px;
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    filter: opacity(95%);
+    animation-name: bigcircle-animation;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+}
+#circle2 {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background-color: #050210;
+    transform: translate(448px, 95px);
+    
+}
+#circle3 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 50.1%;
+    top: 51%;
+    background-color: rgb(20, 20, 32);
+    animation-name: smallcircle-animation;
+    animation-duration: 1s; 
+    animation-iteration-count: infinite; 
+}
+
+#circle1::after {
+    position: absolute;
+    content: '';
+    left: -6%;
+    top: -36px;
+    width: 600px;
+    height: 600px; 
+    border-radius: 100%;
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    opacity: 0.25;
+    margin: 0 auto;
+    filter: brightness(160%);
+    box-shadow: 0 0 36px 12px #d8c2f0, 0 0 36px 3px #55fb9f, 0 0 36px 3px #fb5dad;
+    /* Iz nekog razloga mi nije radio filter: drop-shadow();
+       i zato sam koristio svojstvo senke box-shadow */
+}
